@@ -1,0 +1,44 @@
+﻿<Properties StartupConfiguration="{61E03DF5-F1F0-405F-B6DA-0833EF107B8C}|Default">
+  <MonoDevelop.Ide.ItemProperties.MISA.CukCuk.API PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="MISA.CukCuk.Infrastructure/Repository/CustomerRepository.cs">
+    <Files>
+      <File FileName="MISA.CukCuk.Core/Service/CustomerService.cs" Line="79" Column="1" />
+      <File FileName="MISA.CukCuk.Core/Interface/Repository/ICustomerRepository.cs" />
+      <File FileName="MISA.CukCuk.Infrastructure/Repository/CustomerRepository.cs" Line="1" Column="1" />
+      <File FileName="MISA.CukCuk.API/Controllers/CustomerController.cs" />
+      <File FileName="MISA.CukCuk.Core/Exceptions/CustomerException.cs" />
+      <File FileName="MISA.CukCuk.API/Startup.cs" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="MISA.CukCuk" expanded="True">
+            <Node name="MISA.CukCuk.API" expanded="True">
+              <Node name="Controllers" expanded="True" />
+            </Node>
+            <Node name="MISA.CukCuk.Core" expanded="True">
+              <Node name="Entities" expanded="True" />
+              <Node name="Exceptions" expanded="True" />
+              <Node name="Interface" expanded="True">
+                <Node name="Repository" expanded="True" />
+                <Node name="Services" expanded="True" />
+              </Node>
+              <Node name="Service" expanded="True" />
+            </Node>
+            <Node name="MISA.CukCuk.Infrastructure" expanded="True">
+              <Node name="Repository" expanded="True">
+                <Node name="CustomerRepository.cs" selected="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
