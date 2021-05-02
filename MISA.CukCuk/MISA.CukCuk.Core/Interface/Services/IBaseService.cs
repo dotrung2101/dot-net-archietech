@@ -37,7 +37,7 @@ namespace MISA.CukCuk.Core.Interface.Services
         /// <param name="customer">Customer</param>
         /// <returns>Number of customer was updated</returns>
         /// Created by: dvtrung
-        int Update(MISAEntity customer);
+        int Update(MISAEntity customer, Guid entityId);
 
         /// <summary>
         /// Delete a record in the table Customer which has CustomerId
@@ -47,5 +47,6 @@ namespace MISA.CukCuk.Core.Interface.Services
         /// <returns>Number of customer was deleted</returns>
         /// Created by: dvtrung
         int Delete(Guid id);
+
     }
 }

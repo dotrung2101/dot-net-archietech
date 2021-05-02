@@ -13,88 +13,13 @@ namespace MISA.CukCuk.API.Controllers
 {
     [Route("api/v1/customers")]
     [ApiController]
-    public class CustomerController : ControllerBase
+    public class CustomerController : BaseController<Customer>
     {
         ICustomerService _customerService;
 
-        public CustomerController(ICustomerService customerService) : base()
+        public CustomerController(ICustomerService customerService) : base(customerService)
         {
             _customerService = customerService;
-        }
-
-        [HttpGet]
-        public IActionResult Get()
-        {
-            var customers = _customerService.GetAll();
-
-            if(customers.Count() > 0)
-            {
-                return Ok(customers);
-            }
-            else
-            {
-                return NoContent();
-            }
-        }
-
-        [HttpGet("{id}")]
-        public IActionResult Get(Guid id)
-        {
-            var customers = _customerService.GetByID(id);
-
-            if (customers != null)
-            {
-                return Ok(customers);
-            }
-            else
-            {
-                return NoContent();
-            }
-        }
-
-        [HttpPost]
-        public IActionResult Post(Customer customer)
-        {
-            var rowsAffect = _customerService.Insert(customer);
-
-            if(rowsAffect > 0)
-            {
-                return StatusCode(201, rowsAffect);
-            }
-            else
-            {
-                return NoContent();
-            }
-        }
-
-        [HttpPut("{id}")]
-        public IActionResult Put(Customer customer)
-        {
-            var rowsAffect = _customerService.Update(customer);
-
-            if (rowsAffect > 0)
-            {
-                return StatusCode(200, rowsAffect);
-            }
-            else
-            {
-                return NoContent();
-            }
-        }
-
-        [HttpDelete("{id}")]
-        public IActionResult Delete(Guid id)
-        {
-            var rowsAffect = _customerService.Delete(id);
-
-            if (rowsAffect > 0)
-            {
-                return StatusCode(200, rowsAffect);
-            }
-            else
-            {
-                return NoContent();
-            }
         }
 
         [HttpGet("paging")]

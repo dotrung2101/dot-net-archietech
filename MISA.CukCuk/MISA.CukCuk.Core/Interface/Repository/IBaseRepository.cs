@@ -47,5 +47,9 @@ namespace MISA.CukCuk.Core.Interface.Repository
         /// <returns>Number of customer was deleted</returns>
         /// Created by: dvtrung
         int Delete(Guid id);
+
+        bool CheckPostAttributeDuplicate(string attributeName, string value);
+
+        bool CheckPutAttributeDuplicate(Guid entityId, string attributeName, string value);
     }
 }

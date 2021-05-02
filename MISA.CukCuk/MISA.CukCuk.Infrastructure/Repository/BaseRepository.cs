@@ -20,6 +20,8 @@ namespace MISA.CukCuk.Infrastructure.Repository
                 "Database = MF0_NVManh_CukCuk02;" +
                 "convert zero datetime=True";
 
+        private string tableName = typeof(MISAEntity).Name;
+
         public BaseRepository()
         {
         }
@@ -28,9 +30,6 @@ namespace MISA.CukCuk.Infrastructure.Repository
         {
             using (dBConnection = new MySqlConnection(connectionString))
             {
-
-                var tableName = typeof(MISAEntity).Name;
-
                 string sqlCommand = $"Proc_Get{tableName}s";
                 var customerGroups = dBConnection.Query<MISAEntity>(sqlCommand, commandType: CommandType.StoredProcedure);
 
@@ -49,8 +48,6 @@ namespace MISA.CukCuk.Infrastructure.Repository
         {
             using (dBConnection = new MySqlConnection(connectionString))
             {
-                var tableName = typeof(MISAEntity).Name;
-
                 string sqlCommand = $"Proc_Get{tableName}ById";
 
                 DynamicParameters dynamicParameters = new DynamicParameters();
@@ -73,7 +70,6 @@ namespace MISA.CukCuk.Infrastructure.Repository
         {
             using (dBConnection = new MySqlConnection(connectionString))
             {
-                var tableName = typeof(MISAEntity).Name;
                 string sqlCommand = $"Proc_Insert{tableName}";
                 var result = dBConnection.Execute(sqlCommand, param: entity, commandType: CommandType.StoredProcedure);
 
@@ -92,7 +88,6 @@ namespace MISA.CukCuk.Infrastructure.Repository
         {
             using (dBConnection = new MySqlConnection(connectionString))
             {
-                var tableName = typeof(MISAEntity).Name;
                 string sqlCommand = $"Proc_Update{tableName}";
                 var result = dBConnection.Execute(sqlCommand, param: entity, commandType: CommandType.StoredProcedure);
 
@@ -111,7 +106,6 @@ namespace MISA.CukCuk.Infrastructure.Repository
         {
             using (dBConnection = new MySqlConnection(connectionString))
             {
-                var tableName = typeof(MISAEntity).Name;
                 string sqlCommand = $"Proc_Delete{tableName}";
 
                 DynamicParameters dynamicParameters = new DynamicParameters();
@@ -130,5 +124,26 @@ namespace MISA.CukCuk.Infrastructure.Repository
             }
         }
 
+        public bool CheckPostAttributeDuplicate(string attributeName, string value)
+        {
+            using (dBConnection = new MySqlConnection(connectionString))
+            {
+                string sqlCommand = $"IF EXISTS (SELECT * FROM {tableName} c WHERE c.{attributeName} =  '{value}') THEN SELECT TRUE; ELSE SELECT FALSE; END IF; ";
+                var customerCodeExists = dBConnection.QueryFirstOrDefault<bool>(sqlCommand, commandType: CommandType.Text);
+
+                return customerCodeExists;
+            }
+        }
+
+        public bool CheckPutAttributeDuplicate(Guid entityId, string attributeName, string value)
+        {
+            using (dBConnection = new MySqlConnection(connectionString))
+            {
+                string sqlCommand = $"IF EXISTS (SELECT * FROM {tableName} c WHERE c.{attributeName} =  '{value}' AND !(c.{tableName}Id = '{entityId}')) THEN SELECT TRUE; ELSE SELECT FALSE; END IF; ";
+                var customerCodeExists = dBConnection.QueryFirstOrDefault<bool>(sqlCommand, commandType: CommandType.Text);
+
+                return customerCodeExists;
+            }
+        }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using MISA.CukCuk.Core.AttributesCustom;
 using MISA.CukCuk.Core.Entities;
 using MISA.CukCuk.Core.Exceptions;
 using MISA.CukCuk.Core.Interface.Repository;
@@ -17,85 +18,6 @@ namespace MISA.CukCuk.Core.Service
             _customerRepository = customerRepository;
         }
 
-
-        protected override void ValidatePutData(Customer customer)
-        {
-            List<Object> validate = new List<Object>();
-            var validateCustomerCode = CheckPutValidateCustomerCode(customer.CustomerCode, customer.CustomerId);
-            var validateEmail = CheckPutValidateEmail(customer.Email, customer.CustomerId);
-            var validatePhoneNumber = CheckPutValidatePhoneNumber(customer.PhoneNumber, customer.CustomerId);
-
-            if (!(validateCustomerCode is null))
-            {
-                validate.Add(validateCustomerCode);
-            }
-            if (!(validateEmail is null))
-            {
-                validate.Add(validateEmail);
-            }
-            if (!(validatePhoneNumber is null))
-            {
-                validate.Add(validatePhoneNumber);
-            }
-
-            if (validate.Count > 0)
-            {
-                throw new CustomerException(validate.ToArray());
-            }
-        }
-
-        protected override void ValidatePostData(Customer customer)
-        {
-            List<Object> validate = new List<Object>();
-            var validateCustomerCode = CheckPostValidateCustomerCode(customer.CustomerCode);
-            var validateEmail = CheckPostValidateEmail(customer.Email);
-            var validatePhoneNumber = CheckPostValidatePhoneNumber(customer.PhoneNumber);
-
-            if (!(validateCustomerCode is null))
-            {
-                validate.Add(validateCustomerCode);
-            }
-            if (!(validateEmail is null))
-            {
-                validate.Add(validateEmail);
-            }
-            if (!(validatePhoneNumber is null))
-            {
-                validate.Add(validatePhoneNumber);
-            }
-
-            if(validate.Count > 0)
-            {
-                throw new CustomerException(validate.ToArray());
-            }
-        }
-
-        private Object CheckPostValidateCustomerCode(string customerCode)
-        {
-            if (string.IsNullOrEmpty(customerCode))
-            {
-                var response = new
-                {
-                    devMsg = "Mã khách hàng không được phép để trống",
-                    MISACode = "001"
-                };
-                return response;
-            }
-
-            var customerCodeExists = _customerRepository.CheckPostCustomerCodeExist(customerCode);
-            if (customerCodeExists == true)
-            {
-                var response = new
-                {
-                    devMsg = "Mã khách hàng đã tồn tại trong hệ thống!",
-                    MISACode = "002"
-                };
-                return response;
-            }
-
-            return null;
-        }
-
         private bool IsEmailRightForm(string email)
         {
             try
@@ -109,178 +31,34 @@ namespace MISA.CukCuk.Core.Service
             }
         }
 
-        private Object CheckPostValidateEmail(string email)
+        private bool IsPhoneNumberRightForm(string phoneNumber)
         {
-            if (string.IsNullOrEmpty(email))
-            {
-                var response = new
-                {
-                    devMsg = "Email không được phép để trống",
-                    MISACode = "001"
-                };
-                return response;
-            }
-
-            if (!IsEmailRightForm(email))
-            {
-                var response = new
-                {
-                    devMsg = "Email không đúng định dạng",
-                    MISACode = "003"
-                };
-                return response;
-            }
-
-            var emailExists = _customerRepository.CheckPostEmailExist(email);
-            if (emailExists == true)
-            {
-                var response = new
-                {
-                    devMsg = "Email đã tồn tại trong hệ thống!",
-                    MISACode = "002"
-                };
-                return response;
-            }
-
-            return null;
+            return int.TryParse(phoneNumber, out _);
         }
 
-        private Object CheckPostValidatePhoneNumber(string phoneNumber)
+
+        protected override void CustomPostValidate(Customer customer)
         {
-            if (string.IsNullOrEmpty(phoneNumber))
+            if (!IsEmailRightForm(customer.Email))
             {
-                var response = new
-                {
-                    devMsg = "Số điện thoại không được phép để trống",
-                    MISACode = "001"
-                };
-                return response;
+                _listValidate.Add(new { devMsg = "Email không đúng định dạng" });
             }
-
-            bool regrexPhoneNumber = int.TryParse(phoneNumber, out _);
-
-            if (!regrexPhoneNumber)
+            if (!IsPhoneNumberRightForm(customer.PhoneNumber))
             {
-                var response = new
-                {
-                    devMsg = "Số điện thoại không đúng định dạng",
-                    MISACode = "003"
-                };
-                return response;
+                _listValidate.Add(new { devMsg = "Số điện thoại không đúng định dạng" });
             }
-
-            var phoneNumberExists = _customerRepository.CheckPostPhoneNumberExist(phoneNumber);
-            if (phoneNumberExists == true)
-            {
-                var response = new
-                {
-                    devMsg = "Số điện thoại đã tồn tại trong hệ thống!",
-                    MISACode = "002"
-                };
-                return response;
-            }
-
-            return null;
         }
 
-        private Object CheckPutValidateCustomerCode(string customerCode, Guid id)
+        protected override void CustomPutValidate(Customer customer, Guid entityId)
         {
-            if (string.IsNullOrEmpty(customerCode))
+            if (!IsEmailRightForm(customer.Email))
             {
-                var response = new
-                {
-                    devMsg = "Mã khách hàng không được phép để trống",
-                    MISACode = "001"
-                };
-                return response;
+                _listValidate.Add(new { devMsg = "Email không đúng định dạng" });
             }
-
-            var customerCodeExists = _customerRepository.CheckPutCustomerCodeExist(customerCode, id);
-            if (customerCodeExists == true)
+            if (!IsPhoneNumberRightForm(customer.PhoneNumber))
             {
-                var response = new
-                {
-                    devMsg = "Mã khách hàng đã tồn tại trong hệ thống!",
-                    MISACode = "002"
-                };
-                return response;
+                _listValidate.Add(new { devMsg = "Số điện thoại không đúng định dạng" });
             }
-
-            return null;
-        }
-
-        private Object CheckPutValidateEmail(string email, Guid id)
-        {
-            if (string.IsNullOrEmpty(email))
-            {
-                var response = new
-                {
-                    devMsg = "Email không được phép để trống",
-                    MISACode = "001"
-                };
-                return response;
-            }
-
-            if (!IsEmailRightForm(email))
-            {
-                var response = new
-                {
-                    devMsg = "Email không đúng định dạng",
-                    MISACode = "003"
-                };
-                return response;
-            }
-
-            var emailExists = _customerRepository.CheckPutEmailExist(email, id);
-            if (emailExists == true)
-            {
-                var response = new
-                {
-                    devMsg = "Email đã tồn tại trong hệ thống!",
-                    MISACode = "002"
-                };
-                return response;
-            }
-
-            return null;
-        }
-
-        private Object CheckPutValidatePhoneNumber(string phoneNumber, Guid id)
-        {
-            if (string.IsNullOrEmpty(phoneNumber))
-            {
-                var response = new
-                {
-                    devMsg = "Số điện thoại không được phép để trống",
-                    MISACode = "001"
-                };
-                return response;
-            }
-
-            bool regrexPhoneNumber = int.TryParse(phoneNumber, out _);
-
-            if (!regrexPhoneNumber)
-            {
-                var response = new
-                {
-                    devMsg = "Số điện thoại không đúng định dạng",
-                    MISACode = "003"
-                };
-                return response;
-            }
-
-            var phoneNumberExists = _customerRepository.CheckPutPhoneNumberExist(phoneNumber, id);
-            if (phoneNumberExists == true)
-            {
-                var response = new
-                {
-                    devMsg = "Số điện thoại đã tồn tại trong hệ thống!",
-                    MISACode = "002"
-                };
-                return response;
-            }
-
-            return null;
         }
 
         public IEnumerable<Customer> GetOfPage(int pageIndex, int pageSize, string fullName, Guid? groupId)

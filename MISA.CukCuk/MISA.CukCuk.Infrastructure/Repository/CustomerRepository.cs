@@ -18,79 +18,79 @@ namespace MISA.CukCuk.Infrastructure.Repository
             
         }
 
-        public bool CheckPostCustomerCodeExist(string customerCode)
-        {
-            using(dBConnection = new MySqlConnection(connectionString))
-            {
-                string sqlCommand = $"IF EXISTS (SELECT * FROM Customer c WHERE c.CustomerCode =  '{customerCode}') THEN SELECT TRUE; ELSE SELECT FALSE; END IF; ";
-                var customerCodeExists = dBConnection.QueryFirstOrDefault<bool>(sqlCommand, commandType: CommandType.Text);
+        //public bool CheckPostCustomerCodeExist(string customerCode)
+        //{
+        //    using(dBConnection = new MySqlConnection(connectionString))
+        //    {
+        //        string sqlCommand = $"IF EXISTS (SELECT * FROM Customer c WHERE c.CustomerCode =  '{customerCode}') THEN SELECT TRUE; ELSE SELECT FALSE; END IF; ";
+        //        var customerCodeExists = dBConnection.QueryFirstOrDefault<bool>(sqlCommand, commandType: CommandType.Text);
 
-                return customerCodeExists;
-            }
+        //        return customerCodeExists;
+        //    }
 
-            
-        }
 
-        public bool CheckPutCustomerCodeExist(string customerCode, Guid id)
-        {
-            using (dBConnection = new MySqlConnection(connectionString))
-            {
-                string sqlCommand = $"IF EXISTS (SELECT * FROM Customer c WHERE c.CustomerCode =  '{customerCode}' AND !(c.CustomerId = '{id}')) THEN SELECT TRUE; ELSE SELECT FALSE; END IF; ";
-                var customerCodeExists = dBConnection.QueryFirstOrDefault<bool>(sqlCommand, commandType: CommandType.Text);
+        //}
 
-                return customerCodeExists;
-            }
-            
-        }
+        //public bool CheckPutCustomerCodeExist(string customerCode, Guid id)
+        //{
+        //    using (dBConnection = new MySqlConnection(connectionString))
+        //    {
+        //        string sqlCommand = $"IF EXISTS (SELECT * FROM Customer c WHERE c.CustomerCode =  '{customerCode}' AND !(c.CustomerId = '{id}')) THEN SELECT TRUE; ELSE SELECT FALSE; END IF; ";
+        //        var customerCodeExists = dBConnection.QueryFirstOrDefault<bool>(sqlCommand, commandType: CommandType.Text);
 
-        
-        public bool CheckPostEmailExist(string email)
-        {
-            using (dBConnection = new MySqlConnection(connectionString))
-            {
-                string sqlCommand = $"IF EXISTS (SELECT * FROM Customer c WHERE c.Email =  '{email}') THEN SELECT TRUE; ELSE SELECT FALSE; END IF; ";
-                var emailExist = dBConnection.QueryFirstOrDefault<bool>(sqlCommand, commandType: CommandType.Text);
+        //        return customerCodeExists;
+        //    }
 
-                return emailExist;
-            }
-            
-        }
+        //}
 
-        public bool CheckPostPhoneNumberExist(string phoneNumber)
-        {
-            using (dBConnection = new MySqlConnection(connectionString))
-            {
-                string sqlCommand = $"IF EXISTS (SELECT * FROM Customer c WHERE c.PhoneNumber =  '{phoneNumber}') THEN SELECT TRUE; ELSE SELECT FALSE; END IF; ";
-                var phoneNumberExist = dBConnection.QueryFirstOrDefault<bool>(sqlCommand, commandType: CommandType.Text);
 
-                return phoneNumberExist;
-            }
-            
-        }
+        //public bool CheckPostEmailExist(string email)
+        //{
+        //    using (dBConnection = new MySqlConnection(connectionString))
+        //    {
+        //        string sqlCommand = $"IF EXISTS (SELECT * FROM Customer c WHERE c.Email =  '{email}') THEN SELECT TRUE; ELSE SELECT FALSE; END IF; ";
+        //        var emailExist = dBConnection.QueryFirstOrDefault<bool>(sqlCommand, commandType: CommandType.Text);
 
-        public bool CheckPutEmailExist(string email, Guid id)
-        {
-            using (dBConnection = new MySqlConnection(connectionString))
-            {
-                string sqlCommand = $"IF EXISTS (SELECT * FROM Customer c WHERE c.Email =  '{email}' AND !(c.CustomerId = '{id}')) THEN SELECT TRUE; ELSE SELECT FALSE; END IF; ";
-                var emailExist = dBConnection.QueryFirstOrDefault<bool>(sqlCommand, commandType: CommandType.Text);
+        //        return emailExist;
+        //    }
 
-                return emailExist;
-            }
-            
-        }
+        //}
 
-        public bool CheckPutPhoneNumberExist(string phoneNumber, Guid id)
-        {
-            using (dBConnection = new MySqlConnection(connectionString))
-            {
-                string sqlCommand = $"IF EXISTS (SELECT * FROM Customer c WHERE c.PhoneNumber =  '{phoneNumber}' AND !(c.CustomerId = '{id}')) THEN SELECT TRUE; ELSE SELECT FALSE; END IF; ";
-                var phoneNumberExist = dBConnection.QueryFirstOrDefault<bool>(sqlCommand, commandType: CommandType.Text);
+        //public bool CheckPostPhoneNumberExist(string phoneNumber)
+        //{
+        //    using (dBConnection = new MySqlConnection(connectionString))
+        //    {
+        //        string sqlCommand = $"IF EXISTS (SELECT * FROM Customer c WHERE c.PhoneNumber =  '{phoneNumber}') THEN SELECT TRUE; ELSE SELECT FALSE; END IF; ";
+        //        var phoneNumberExist = dBConnection.QueryFirstOrDefault<bool>(sqlCommand, commandType: CommandType.Text);
 
-                return phoneNumberExist;
-            }
-            
-        }
+        //        return phoneNumberExist;
+        //    }
+
+        //}
+
+        //public bool CheckPutEmailExist(string email, Guid id)
+        //{
+        //    using (dBConnection = new MySqlConnection(connectionString))
+        //    {
+        //        string sqlCommand = $"IF EXISTS (SELECT * FROM Customer c WHERE c.Email =  '{email}' AND !(c.CustomerId = '{id}')) THEN SELECT TRUE; ELSE SELECT FALSE; END IF; ";
+        //        var emailExist = dBConnection.QueryFirstOrDefault<bool>(sqlCommand, commandType: CommandType.Text);
+
+        //        return emailExist;
+        //    }
+
+        //}
+
+        //public bool CheckPutPhoneNumberExist(string phoneNumber, Guid id)
+        //{
+        //    using (dBConnection = new MySqlConnection(connectionString))
+        //    {
+        //        string sqlCommand = $"IF EXISTS (SELECT * FROM Customer c WHERE c.PhoneNumber =  '{phoneNumber}' AND !(c.CustomerId = '{id}')) THEN SELECT TRUE; ELSE SELECT FALSE; END IF; ";
+        //        var phoneNumberExist = dBConnection.QueryFirstOrDefault<bool>(sqlCommand, commandType: CommandType.Text);
+
+        //        return phoneNumberExist;
+        //    }
+
+        //}
 
         public IEnumerable<Customer> GetInRange(int fromIndex, int numberOfRecords, string fullName, Guid? groupId)
         {
@@ -108,7 +108,7 @@ namespace MISA.CukCuk.Infrastructure.Repository
                 return customers;
             }
 
-            
+
         }
     }
 }

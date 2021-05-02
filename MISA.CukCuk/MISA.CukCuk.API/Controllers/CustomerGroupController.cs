@@ -12,89 +12,16 @@ namespace MISA.CukCuk.API.Controllers
 {
     [Route("api/v1/customer-group")]
     [ApiController]
-    public class CustomerGroupController : Controller
+    public class CustomerGroupController : BaseController<CustomerGroup>
     {
         ICustomerGroupService _customerGroupService;
 
 
-        public CustomerGroupController(ICustomerGroupService customerGroupService)
+        public CustomerGroupController(ICustomerGroupService customerGroupService) : base(customerGroupService)
         {
             _customerGroupService = customerGroupService;
         }
 
-        [HttpGet]
-        public IActionResult Get()
-        {
-            var customerGroups = _customerGroupService.GetAll();
-
-            if(customerGroups.Count() > 0)
-            {
-                return Ok(customerGroups);
-            }
-            else
-            {
-                return NoContent();
-            }
-        }
-
-        [HttpGet("{id}")]
-        public IActionResult Get(Guid id)
-        {
-            var customerGroup = _customerGroupService.GetByID(id);
-
-            if (customerGroup != null)
-            {
-                return Ok(customerGroup);
-            }
-            else
-            {
-                return NoContent();
-            }
-        }
-
-        [HttpPost]
-        public IActionResult Post(CustomerGroup customerGroup)
-        {
-            var rowAffect = _customerGroupService.Insert(customerGroup);
-
-            if (rowAffect > 0)
-            {
-                return Ok(rowAffect);
-            }
-            else
-            {
-                return NoContent();
-            }
-        }
-
-        [HttpPut("{id}")]
-        public IActionResult Put(CustomerGroup customerGroup)
-        {
-            var rowAffect = _customerGroupService.Update(customerGroup);
-
-            if (rowAffect > 0)
-            {
-                return Ok(rowAffect);
-            }
-            else
-            {
-                return NoContent();
-            }
-        }
-
-        [HttpDelete("{id}")]
-        public IActionResult Delete(Guid id)
-        {
-            var rowAffect = _customerGroupService.Delete(id);
-
-            if (rowAffect > 0)
-            {
-                return Ok(rowAffect);
-            }
-            else
-            {
-                return NoContent();
-            }
-        }
+        
     }
 }
