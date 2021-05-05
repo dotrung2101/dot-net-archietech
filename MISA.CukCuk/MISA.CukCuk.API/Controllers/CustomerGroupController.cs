@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using MISA.CukCuk.Core.Entities;
 using MISA.CukCuk.Core.Interface.Services;
@@ -12,6 +13,7 @@ namespace MISA.CukCuk.API.Controllers
 {
     [Route("api/v1/customer-group")]
     [ApiController]
+    [EnableCors("_myAllowSpecificOrigins")]
     public class CustomerGroupController : BaseController<CustomerGroup>
     {
         ICustomerGroupService _customerGroupService;

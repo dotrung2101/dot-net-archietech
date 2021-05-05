@@ -20,7 +20,7 @@ namespace MISA.CukCuk.Infrastructure.Repository
                 "Database = MF0_NVManh_CukCuk02;" +
                 "convert zero datetime=True";
 
-        private string tableName = typeof(MISAEntity).Name;
+        private readonly string tableName = typeof(MISAEntity).Name;
 
         public BaseRepository()
         {
@@ -129,9 +129,9 @@ namespace MISA.CukCuk.Infrastructure.Repository
             using (dBConnection = new MySqlConnection(connectionString))
             {
                 string sqlCommand = $"IF EXISTS (SELECT * FROM {tableName} c WHERE c.{attributeName} =  '{value}') THEN SELECT TRUE; ELSE SELECT FALSE; END IF; ";
-                var customerCodeExists = dBConnection.QueryFirstOrDefault<bool>(sqlCommand, commandType: CommandType.Text);
+                var attributeExist = dBConnection.QueryFirstOrDefault<bool>(sqlCommand, commandType: CommandType.Text);
 
-                return customerCodeExists;
+                return attributeExist;
             }
         }
 
@@ -140,9 +140,9 @@ namespace MISA.CukCuk.Infrastructure.Repository
             using (dBConnection = new MySqlConnection(connectionString))
             {
                 string sqlCommand = $"IF EXISTS (SELECT * FROM {tableName} c WHERE c.{attributeName} =  '{value}' AND !(c.{tableName}Id = '{entityId}')) THEN SELECT TRUE; ELSE SELECT FALSE; END IF; ";
-                var customerCodeExists = dBConnection.QueryFirstOrDefault<bool>(sqlCommand, commandType: CommandType.Text);
+                var attributeExist = dBConnection.QueryFirstOrDefault<bool>(sqlCommand, commandType: CommandType.Text);
 
-                return customerCodeExists;
+                return attributeExist;
             }
         }
     }

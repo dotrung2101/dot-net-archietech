@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "4nYelKWaZtGP/ycQwci3cTpyrbYWfpRU4kz2SjGa2QPZiqtGh59wGmOpBL8uN/31EmQY6BTxyJvhuqD0uaWkGA==",
+  "dgSpecHash": "mfsHsHn0LHFnHlLPpjrttkXieR9gg6ITl3EBWmvXKdv6WfbXjl5mrbYCkZv5l+HMpEBRQaZpVsi8TiahojnwJQ==",
   "success": true,
-  "projectFilePath": "/Users/trungdovan/Documents/VisualStudioProject/dot_net_core_archietech/MISA.CukCuk/MISA.CukCuk/MISA.CukCuk.Infrastructure/MISA.CukCuk.Infrastructure.csproj",
+  "projectFilePath": "C:\\Users\\dvtrung\\Downloads\\New folder (2)\\New folder\\dot-net-archietech\\MISA.CukCuk\\MISA.CukCuk.Infrastructure\\MISA.CukCuk.Infrastructure.csproj",
   "expectedPackageFiles": [
-    "/Users/trungdovan/.nuget/packages/dapper/2.0.78/dapper.2.0.78.nupkg.sha512",
-    "/Users/trungdovan/.nuget/packages/mysqlconnector/1.3.3/mysqlconnector.1.3.3.nupkg.sha512"
+    "C:\\Users\\dvtrung\\.nuget\\packages\\dapper\\2.0.78\\dapper.2.0.78.nupkg.sha512",
+    "C:\\Users\\dvtrung\\.nuget\\packages\\mysqlconnector\\1.3.3\\mysqlconnector.1.3.3.nupkg.sha512"
   ],
   "logs": []
 }

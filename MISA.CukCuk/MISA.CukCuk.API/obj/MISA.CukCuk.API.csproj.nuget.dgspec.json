@@ -1,36 +1,41 @@
 {
   "format": 1,
   "restore": {
-    "/Users/trungdovan/Documents/VisualStudioProject/dot_net_core_archietech/MISA.CukCuk/MISA.CukCuk/MISA.CukCuk.API/MISA.CukCuk.API.csproj": {}
+    "C:\\Users\\dvtrung\\Downloads\\New folder (2)\\New folder\\dot-net-archietech\\MISA.CukCuk\\MISA.CukCuk.API\\MISA.CukCuk.API.csproj": {}
   },
   "projects": {
-    "/Users/trungdovan/Documents/VisualStudioProject/dot_net_core_archietech/MISA.CukCuk/MISA.CukCuk/MISA.CukCuk.API/MISA.CukCuk.API.csproj": {
+    "C:\\Users\\dvtrung\\Downloads\\New folder (2)\\New folder\\dot-net-archietech\\MISA.CukCuk\\MISA.CukCuk.API\\MISA.CukCuk.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/trungdovan/Documents/VisualStudioProject/dot_net_core_archietech/MISA.CukCuk/MISA.CukCuk/MISA.CukCuk.API/MISA.CukCuk.API.csproj",
+        "projectUniqueName": "C:\\Users\\dvtrung\\Downloads\\New folder (2)\\New folder\\dot-net-archietech\\MISA.CukCuk\\MISA.CukCuk.API\\MISA.CukCuk.API.csproj",
         "projectName": "MISA.CukCuk.API",
-        "projectPath": "/Users/trungdovan/Documents/VisualStudioProject/dot_net_core_archietech/MISA.CukCuk/MISA.CukCuk/MISA.CukCuk.API/MISA.CukCuk.API.csproj",
-        "packagesPath": "/Users/trungdovan/.nuget/packages/",
-        "outputPath": "/Users/trungdovan/Documents/VisualStudioProject/dot_net_core_archietech/MISA.CukCuk/MISA.CukCuk/MISA.CukCuk.API/obj/",
+        "projectPath": "C:\\Users\\dvtrung\\Downloads\\New folder (2)\\New folder\\dot-net-archietech\\MISA.CukCuk\\MISA.CukCuk.API\\MISA.CukCuk.API.csproj",
+        "packagesPath": "C:\\Users\\dvtrung\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\dvtrung\\Downloads\\New folder (2)\\New folder\\dot-net-archietech\\MISA.CukCuk\\MISA.CukCuk.API\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "/Users/trungdovan/.config/NuGet/NuGet.Config"
+          "C:\\Users\\dvtrung\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "/Users/trungdovan/Documents/VisualStudioProject/dot_net_core_archietech/MISA.CukCuk/MISA.CukCuk/MISA.CukCuk.Core/MISA.CukCuk.Core.csproj": {
-                "projectPath": "/Users/trungdovan/Documents/VisualStudioProject/dot_net_core_archietech/MISA.CukCuk/MISA.CukCuk/MISA.CukCuk.Core/MISA.CukCuk.Core.csproj"
+              "C:\\Users\\dvtrung\\Downloads\\New folder (2)\\New folder\\dot-net-archietech\\MISA.CukCuk\\MISA.CukCuk.Core\\MISA.CukCuk.Core.csproj": {
+                "projectPath": "C:\\Users\\dvtrung\\Downloads\\New folder (2)\\New folder\\dot-net-archietech\\MISA.CukCuk\\MISA.CukCuk.Core\\MISA.CukCuk.Core.csproj"
               },
-              "/Users/trungdovan/Documents/VisualStudioProject/dot_net_core_archietech/MISA.CukCuk/MISA.CukCuk/MISA.CukCuk.Infrastructure/MISA.CukCuk.Infrastructure.csproj": {
-                "projectPath": "/Users/trungdovan/Documents/VisualStudioProject/dot_net_core_archietech/MISA.CukCuk/MISA.CukCuk/MISA.CukCuk.Infrastructure/MISA.CukCuk.Infrastructure.csproj"
+              "C:\\Users\\dvtrung\\Downloads\\New folder (2)\\New folder\\dot-net-archietech\\MISA.CukCuk\\MISA.CukCuk.Infrastructure\\MISA.CukCuk.Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\dvtrung\\Downloads\\New folder (2)\\New folder\\dot-net-archietech\\MISA.CukCuk\\MISA.CukCuk.Infrastructure\\MISA.CukCuk.Infrastructure.csproj"
               }
             }
           }
@@ -45,6 +50,14 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Cors": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.Mvc.Cors": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[5.6.3, )"
@@ -68,26 +81,31 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.202/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "/Users/trungdovan/Documents/VisualStudioProject/dot_net_core_archietech/MISA.CukCuk/MISA.CukCuk/MISA.CukCuk.Core/MISA.CukCuk.Core.csproj": {
+    "C:\\Users\\dvtrung\\Downloads\\New folder (2)\\New folder\\dot-net-archietech\\MISA.CukCuk\\MISA.CukCuk.Core\\MISA.CukCuk.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/trungdovan/Documents/VisualStudioProject/dot_net_core_archietech/MISA.CukCuk/MISA.CukCuk/MISA.CukCuk.Core/MISA.CukCuk.Core.csproj",
+        "projectUniqueName": "C:\\Users\\dvtrung\\Downloads\\New folder (2)\\New folder\\dot-net-archietech\\MISA.CukCuk\\MISA.CukCuk.Core\\MISA.CukCuk.Core.csproj",
         "projectName": "MISA.CukCuk.Core",
-        "projectPath": "/Users/trungdovan/Documents/VisualStudioProject/dot_net_core_archietech/MISA.CukCuk/MISA.CukCuk/MISA.CukCuk.Core/MISA.CukCuk.Core.csproj",
-        "packagesPath": "/Users/trungdovan/.nuget/packages/",
-        "outputPath": "/Users/trungdovan/Documents/VisualStudioProject/dot_net_core_archietech/MISA.CukCuk/MISA.CukCuk/MISA.CukCuk.Core/obj/",
+        "projectPath": "C:\\Users\\dvtrung\\Downloads\\New folder (2)\\New folder\\dot-net-archietech\\MISA.CukCuk\\MISA.CukCuk.Core\\MISA.CukCuk.Core.csproj",
+        "packagesPath": "C:\\Users\\dvtrung\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\dvtrung\\Downloads\\New folder (2)\\New folder\\dot-net-archietech\\MISA.CukCuk\\MISA.CukCuk.Core\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "/Users/trungdovan/.config/NuGet/NuGet.Config"
+          "C:\\Users\\dvtrung\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -120,34 +138,39 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.202/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "/Users/trungdovan/Documents/VisualStudioProject/dot_net_core_archietech/MISA.CukCuk/MISA.CukCuk/MISA.CukCuk.Infrastructure/MISA.CukCuk.Infrastructure.csproj": {
+    "C:\\Users\\dvtrung\\Downloads\\New folder (2)\\New folder\\dot-net-archietech\\MISA.CukCuk\\MISA.CukCuk.Infrastructure\\MISA.CukCuk.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/trungdovan/Documents/VisualStudioProject/dot_net_core_archietech/MISA.CukCuk/MISA.CukCuk/MISA.CukCuk.Infrastructure/MISA.CukCuk.Infrastructure.csproj",
+        "projectUniqueName": "C:\\Users\\dvtrung\\Downloads\\New folder (2)\\New folder\\dot-net-archietech\\MISA.CukCuk\\MISA.CukCuk.Infrastructure\\MISA.CukCuk.Infrastructure.csproj",
         "projectName": "MISA.CukCuk.Infrastructure",
-        "projectPath": "/Users/trungdovan/Documents/VisualStudioProject/dot_net_core_archietech/MISA.CukCuk/MISA.CukCuk/MISA.CukCuk.Infrastructure/MISA.CukCuk.Infrastructure.csproj",
-        "packagesPath": "/Users/trungdovan/.nuget/packages/",
-        "outputPath": "/Users/trungdovan/Documents/VisualStudioProject/dot_net_core_archietech/MISA.CukCuk/MISA.CukCuk/MISA.CukCuk.Infrastructure/obj/",
+        "projectPath": "C:\\Users\\dvtrung\\Downloads\\New folder (2)\\New folder\\dot-net-archietech\\MISA.CukCuk\\MISA.CukCuk.Infrastructure\\MISA.CukCuk.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\dvtrung\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\dvtrung\\Downloads\\New folder (2)\\New folder\\dot-net-archietech\\MISA.CukCuk\\MISA.CukCuk.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "/Users/trungdovan/.config/NuGet/NuGet.Config"
+          "C:\\Users\\dvtrung\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "/Users/trungdovan/Documents/VisualStudioProject/dot_net_core_archietech/MISA.CukCuk/MISA.CukCuk/MISA.CukCuk.Core/MISA.CukCuk.Core.csproj": {
-                "projectPath": "/Users/trungdovan/Documents/VisualStudioProject/dot_net_core_archietech/MISA.CukCuk/MISA.CukCuk/MISA.CukCuk.Core/MISA.CukCuk.Core.csproj"
+              "C:\\Users\\dvtrung\\Downloads\\New folder (2)\\New folder\\dot-net-archietech\\MISA.CukCuk\\MISA.CukCuk.Core\\MISA.CukCuk.Core.csproj": {
+                "projectPath": "C:\\Users\\dvtrung\\Downloads\\New folder (2)\\New folder\\dot-net-archietech\\MISA.CukCuk\\MISA.CukCuk.Core\\MISA.CukCuk.Core.csproj"
               }
             }
           }
@@ -186,7 +209,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.202/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }

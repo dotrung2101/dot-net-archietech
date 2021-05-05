@@ -94,32 +94,38 @@
     ]
   },
   "packageFolders": {
-    "/Users/trungdovan/.nuget/packages/": {}
+    "C:\\Users\\dvtrung\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/trungdovan/Documents/VisualStudioProject/dot_net_core_archietech/MISA.CukCuk/MISA.CukCuk/MISA.CukCuk.Infrastructure/MISA.CukCuk.Infrastructure.csproj",
+      "projectUniqueName": "C:\\Users\\dvtrung\\Downloads\\New folder (2)\\New folder\\dot-net-archietech\\MISA.CukCuk\\MISA.CukCuk.Infrastructure\\MISA.CukCuk.Infrastructure.csproj",
       "projectName": "MISA.CukCuk.Infrastructure",
-      "projectPath": "/Users/trungdovan/Documents/VisualStudioProject/dot_net_core_archietech/MISA.CukCuk/MISA.CukCuk/MISA.CukCuk.Infrastructure/MISA.CukCuk.Infrastructure.csproj",
-      "packagesPath": "/Users/trungdovan/.nuget/packages/",
-      "outputPath": "/Users/trungdovan/Documents/VisualStudioProject/dot_net_core_archietech/MISA.CukCuk/MISA.CukCuk/MISA.CukCuk.Infrastructure/obj/",
+      "projectPath": "C:\\Users\\dvtrung\\Downloads\\New folder (2)\\New folder\\dot-net-archietech\\MISA.CukCuk\\MISA.CukCuk.Infrastructure\\MISA.CukCuk.Infrastructure.csproj",
+      "packagesPath": "C:\\Users\\dvtrung\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\dvtrung\\Downloads\\New folder (2)\\New folder\\dot-net-archietech\\MISA.CukCuk\\MISA.CukCuk.Infrastructure\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "/Users/trungdovan/.config/NuGet/NuGet.Config"
+        "C:\\Users\\dvtrung\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "/Users/trungdovan/Documents/VisualStudioProject/dot_net_core_archietech/MISA.CukCuk/MISA.CukCuk/MISA.CukCuk.Core/MISA.CukCuk.Core.csproj": {
-              "projectPath": "/Users/trungdovan/Documents/VisualStudioProject/dot_net_core_archietech/MISA.CukCuk/MISA.CukCuk/MISA.CukCuk.Core/MISA.CukCuk.Core.csproj"
+            "C:\\Users\\dvtrung\\Downloads\\New folder (2)\\New folder\\dot-net-archietech\\MISA.CukCuk\\MISA.CukCuk.Core\\MISA.CukCuk.Core.csproj": {
+              "projectPath": "C:\\Users\\dvtrung\\Downloads\\New folder (2)\\New folder\\dot-net-archietech\\MISA.CukCuk\\MISA.CukCuk.Core\\MISA.CukCuk.Core.csproj"
             }
           }
         }
@@ -158,7 +164,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.202/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
       }
     }
   }
