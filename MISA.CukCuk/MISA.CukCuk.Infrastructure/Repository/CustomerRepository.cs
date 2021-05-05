@@ -21,19 +21,25 @@ namespace MISA.CukCuk.Infrastructure.Repository
         
         public IEnumerable<Customer> GetInRange(int fromIndex, int numberOfRecords, string fullName, Guid? groupId)
         {
+            
             using (dBConnection = new MySqlConnection(connectionString))
             {
-                string sqlCommand = $"SELECT * FROM Customer c WHERE c.FullName LIKE CONCAT(\"%\", '{fullName}', \"%\") AND c.CustomerGroupId = '{groupId}' LIMIT {fromIndex} , {numberOfRecords}";
+                string sqlCommand = $"Proc_DVTRUNG_FilterAndGetCustomerInRange";
 
-                if (groupId == null)
-                {
-                    sqlCommand = $"SELECT * FROM Customer c WHERE c.FullName LIKE CONCAT(\"%\", '{fullName}', \"%\") LIMIT {fromIndex} , {numberOfRecords}";
-                }
+                DynamicParameters parameters = new DynamicParameters();
 
-                var customers = dBConnection.Query<Customer>(sqlCommand, commandType: CommandType.Text);
+                parameters.Add($"@fullName", fullName);
+                parameters.Add($"@groupId", groupId);
+                parameters.Add($"@fromIndex", fromIndex);
+                parameters.Add($"@numberOfRecords", numberOfRecords);
+
+                var customers = dBConnection.Query<Customer>(sqlCommand, param: parameters, commandType: CommandType.StoredProcedure);
 
                 return customers;
             }
         }
     }
 }
+
+/*
+*/

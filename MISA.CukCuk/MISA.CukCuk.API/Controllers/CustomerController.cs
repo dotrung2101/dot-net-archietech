@@ -25,7 +25,14 @@ namespace MISA.CukCuk.API.Controllers
         [HttpGet("paging")]
         public IActionResult Paging(int pageIndex, int pageSize, string fullName, Guid? groupId)
         {
+            
             var customers = _customerService.GetOfPage(pageIndex, pageSize, fullName, groupId);
+
+            if(customers == null)
+            {
+                return NoContent();
+            }
+
             if(customers.Count() > 0)
             {
                 return Ok(customers);

@@ -63,7 +63,24 @@ namespace MISA.CukCuk.Core.Service
 
         public IEnumerable<Customer> GetOfPage(int pageIndex, int pageSize, string fullName, Guid? groupId)
         {
+            if (pageIndex < 0 || pageSize < 0)
+            {
+                return null;
+            }
+            if (pageIndex == 0)
+            {
+                pageIndex = 1;
+            }
+            if(pageSize == 0)
+            {
+                pageSize = 10;
+            }
 
+            if (string.IsNullOrEmpty(fullName))
+            {
+                fullName = "";
+            }
+            
             int fromIndex = (pageIndex - 1) * pageSize;
 
             var customers =_customerRepository.GetInRange(fullName: fullName, groupId: groupId, fromIndex: fromIndex, numberOfRecords: pageSize);
